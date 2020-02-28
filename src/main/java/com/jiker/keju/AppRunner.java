@@ -5,7 +5,7 @@ import java.util.List;
 public class AppRunner {
 
     public static void main(String  args[]){
-        try { String receipt = "";
+        try { String receipt = "1234test";
         ArgsRead argsRead = new ArgsRead(args[0]);
         List list = argsRead.getCMD();
         ExCuteCmd exCuteCmd = new ExCuteCmd();
