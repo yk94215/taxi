@@ -9,19 +9,27 @@ public class Taxi {
     private static final double WAITING_PRICE = 0.25;  //起步价限额2km
 
     public static int getPrice(int distance, int watingTime) {
+    	if(distance>LONG_DISTANCE)
+        return ret3(distance, watingTime);
+        if(distance>STARTING_DISTANCE && distance <=LONG_DISTANCE)
+        return ret2(distance,watingTime);
+        
+        return ret1(distance,watingTime);
+    }
+
+    private static int ret1(int distance, int watingTime) {
         double waitPrice = watingTime*WAITING_PRICE;
-        if(distance<= STARTING_DISTANCE){
-            int price = (int) Math.round((STARTING_PRICE+waitPrice));
-            return price;
-        }
-        if(distance>STARTING_DISTANCE && distance <=LONG_DISTANCE){
-            int price = (int) Math.round((distance-STARTING_DISTANCE)*PRICE_PER_KM+waitPrice);
-            return price+STARTING_PRICE;
-        }
-        if(distance>LONG_DISTANCE){
-            double price=STARTING_PRICE+(distance-STARTING_DISTANCE)*PRICE_PER_KM+(distance-LONG_DISTANCE)*PRICE_PER_KM*OVER_PRICE_PERCENT+waitPrice;
-            return  (int) Math.round(price);
-        }
-        return 0;
+        int price = (int) Math.round((STARTING_PRICE+waitPrice));
+        return price;
+    }
+    private static int ret2(int distance, int watingTime) {
+    	 double waitPrice = watingTime*WAITING_PRICE;  
+    	int price = (int) Math.round((distance-STARTING_DISTANCE)*PRICE_PER_KM+waitPrice);
+           return price+STARTING_PRICE;
+    }
+    private static int ret3(int distance, int watingTime) {
+    	 double waitPrice = watingTime*WAITING_PRICE;
+    	 double price=STARTING_PRICE+(distance-STARTING_DISTANCE)*PRICE_PER_KM+(distance-LONG_DISTANCE)*PRICE_PER_KM*OVER_PRICE_PERCENT+waitPrice;
+         return  (int) Math.round(price);
     }
 }
