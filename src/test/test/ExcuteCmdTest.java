@@ -1,6 +1,6 @@
-package com.jiker.keju.test;
+package test;
 import com.jiker.keju.ExCuteCmd;
-import com.jiker.keju.ArgsRead;
+import  com.jiker.keju.ArgsRead;
 import org.junit.Test;
 import java.util.List;
 import static  org.junit.Assert.assertEquals;

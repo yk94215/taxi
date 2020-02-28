@@ -1,4 +1,4 @@
-package com.jiker.keju.test;
+package  test;
 import com.jiker.keju.Taxi;
 import org.junit.Test;
 import static  org.junit.Assert.assertEquals;
