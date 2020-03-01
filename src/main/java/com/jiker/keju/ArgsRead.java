@@ -9,7 +9,7 @@ public class ArgsRead {
     private File file ;
     private String PATH=System.getProperty("user.dir") + "\\src\\main\\resources\\";
     public ArgsRead(String fileName) {
-    	String path2= this.getClass().getResource("/").getPath()+"\\resources\\";
+    	String path2= this.getClass().getResource("/").getPath()+fileName;
         this.file  = new File(path2);
     	//this.file  = new File(PATH+fileName);
         System.out.println(path2);
