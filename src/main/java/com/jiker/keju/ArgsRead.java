@@ -1,5 +1,6 @@
 package com.jiker.keju;
 
+import java.awt.geom.Path2D;
 import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -8,9 +9,10 @@ public class ArgsRead {
     private File file ;
     private String PATH=System.getProperty("user.dir") + "\\src\\main\\resources\\";
     public ArgsRead(String fileName) {
-      //  this.file  = new File(getClass().getClassLoader().getResource(fileName).getFile());
-    	this.file  = new File(PATH+fileName);
-        System.out.println(getClass().getResource("/"));
+    	String path2= this.getClass().getResource("/").getPath()+"\\resources\\";
+        this.file  = new File(path2);
+    	//this.file  = new File(PATH+fileName);
+        System.out.println(path2);
         System.out.println(PATH+fileName);
     }
     public List<Cmd> getCMD() throws Exception {
