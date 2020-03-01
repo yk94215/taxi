@@ -9,8 +9,8 @@ public class ArgsRead {
     private String PATH=System.getProperty("user.dir") + "\\src\\main\\resources\\";
     public ArgsRead(String fileName) {
         this.file  = new File(getClass().getClassLoader().getResource(fileName).getFile());
-        System.out.println(System.getProperty("user.dir"));
-        System.out.println(getClass().getClassLoader().getResource(fileName).getFile());
+        System.out.println(getClass().getResource("/"));
+        System.out.println(PATH);
     }
     public List<Cmd> getCMD() throws Exception {
         if(this.file.exists()){List<Cmd> list = new LinkedList<>();InputStream in = null;
