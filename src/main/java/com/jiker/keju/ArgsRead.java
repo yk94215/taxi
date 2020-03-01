@@ -12,9 +12,9 @@ public class ArgsRead {
     	String path2= this.getClass().getResource("/").getPath()+"resources"+File.separator+fileName;
         //this.file  = new File(path2);
     	this.file  = new File(PATH+fileName);
-        System.out.println(path2);
-        System.out.println(PATH+fileName);
-        System.out.println(file.exists()+":"+file.isFile());
+     //   System.out.println(path2);
+     //   System.out.println(PATH+fileName);
+     //   System.out.println(file.exists()+":"+file.isFile());
     }
     public List<Cmd> getCMD() throws Exception {
         if(this.file.exists()){List<Cmd> list = new LinkedList<>();InputStream in = null;
