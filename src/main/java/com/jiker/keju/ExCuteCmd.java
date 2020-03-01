@@ -9,7 +9,7 @@ public class ExCuteCmd {
             String pfix = "收费";String sfix = "元\n";String ret = "";
             for(int x = 0;x<list.size();x++){
                 Cmd cmd = (Cmd) list.get(x);
-                ret = ret + pfix+Taxi.getPrice(cmd.getDistance(),cmd.getWating())+sfix;
+                ret = ret + pfix+new Taxi().getPrice(cmd.getDistance(),cmd.getWating())+sfix;
             }return  ret;}return null;
     }
 }

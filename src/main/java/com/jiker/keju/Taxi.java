@@ -8,7 +8,7 @@ public class Taxi {
     private static final int LONG_DISTANCE = 8;  //长途线
     private static final double WAITING_PRICE = 0.25;  //起步价限额2km
 
-    public static int getPrice(int distance, int watingTime) {
+    public  int getPrice(int distance, int watingTime) {
     	if(distance>LONG_DISTANCE)
         return ret3(distance, watingTime);
         if(distance>STARTING_DISTANCE && distance <=LONG_DISTANCE)
