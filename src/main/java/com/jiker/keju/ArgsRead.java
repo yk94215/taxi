@@ -7,11 +7,11 @@ import java.util.List;
 
 public class ArgsRead {
     private File file ;
-    private String PATH=System.getProperty("user.dir") + "\\src\\main\\resources\\";
+    private String PATH=System.getProperty("user.dir") +File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
     public ArgsRead(String fileName) {
     	String path2= this.getClass().getResource("/").getPath()+"resources"+File.separator+fileName;
-        this.file  = new File(path2);
-    	//this.file  = new File(PATH+fileName);
+        //this.file  = new File(path2);
+    	this.file  = new File(PATH+fileName);
         System.out.println(path2);
         System.out.println(PATH+fileName);
         System.out.println(file.exists()+":"+file.isFile());
